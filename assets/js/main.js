@@ -1,10 +1,4 @@
-/**
-* Template Name: Delicious
-* Updated: Jul 27 2023 with Bootstrap v5.3.1
-* Template URL: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 (function() {
   "use strict";
 
@@ -134,7 +128,7 @@
   }, true)
 
   /**
-   * Scrool with ofset on links with a class name .scrollto
+   * Scroll with ofset on links with a class name .scrollto
    */
   on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
@@ -175,14 +169,218 @@
   });
 
   /**
-   * Menu isotope and filter
+   * Initiate gallery lightbox 
    */
+  const galleryLightbox = GLightbox({
+    selector: '.gallery-lightbox'
+  });
+
+  
+
+  const menuItems = [
+    { name: "Affogato", category: "Espresso", price: 145 },
+    { name: "Ala King", category: "Brunch", price: 150 },
+    { name: "Apple Shake", category: "Non-Coffee Drinks", price: 120 },
+    { name: "Avocado", category: "Shakes", price: 115 },
+    { name: "Avocado Frappe", category: "Non-Coffee Drinks", price: 105 },
+    { name: "Beef Tapa W/ Rice & Egg", category: "Brunch", price: 130 },
+    { name: "Beefy Nacho Fries", category: "Starter", price: 185 },
+    { name: "Blue Lemonade", category: "Non-Coffee Drinks", price: 70 },
+    { name: "Brewed Coffee Plain Black", category: "Espresso", price: 50 },
+    { name: "Brewed Coffee With Milk", category: "Espresso", price: 55 },
+    { name: "Caesar Salad", category: "Salads", price: 210 },
+    { name: "Caffe Latte", category: "Espresso", price: 90 },
+    { name: "Caffe Mocha Latte", category: "Espresso", price: 125 },
+    { name: "Caramel Macchiato", category: "Espresso", price: 125 },
+    { name: "Carbonara (Chicken)", category: "Pastas", price: 165 },
+    { name: "Carbonara (Tuna)", category: "Pastas", price: 165 },
+    { name: "Cheesy Cornedbeef", category: "Sandwiches", price: 100 },
+    { name: "Cheesy Egg Sandwich", category: "Sandwiches", price: 85 },
+    { name: "Cheesy Meaty Fries", category: "Starter", price: 110 },
+    { name: "Cheesy Potato Balls", category: "Starter", price: 145 },
+    { name: "Chicken Creamy Pesto W/Rice", category: "Brunch", price: 150 },
+    { name: "Chicken Fillet W/Rice", category: "Brunch", price: 150 },
+    { name: "Chicken Salad", category: "Salads", price: 220 },
+    { name: "Chicken Sandwich", category: "Sandwiches", price: 95 },
+    { name: "Chicken Strips", category: "Starter", price: 130 },
+    { name: "Chicken Wings (Buffalo)", category: "Brunch", price: 170 },
+    { name: "Chicken Wings (Honeysoy)", category: "Brunch", price: 170 },
+    { name: "Chicken Wings Parmesan", category: "Brunch", price: 170 },
+    { name: "Chocolate Frappe", category: "Non-Coffee Drinks", price: 115 },
+    { name: "Chocolate Waffle", category: "Waffles", price: 120 },
+    { name: "Churros & Dip (Caramel)", category: "Starter", price: 135 },
+    { name: "Churros & Dip (Chocolate)", category: "Starter", price: 135 },
+    { name: "Churros Bowl Ala Mode", category: "Starter", price: 145 },
+    { name: "Coffee-Based Caramel Frappe", category: "Espresso", price: 130 },
+    { name: "Coke In Can", category: "Softdrinks", price: 60 },
+    { name: "Cookie Monster", category: "Non-Coffee Drinks", price: 140 },
+    { name: "Cookies And Cream Frappe", category: "Non-Coffee Drinks", price: 125 },
+    { name: "Corn Shake", category: "Shakes", price: 110 },
+    { name: "Cornsilog", category: "Brunch", price: 95 },
+    { name: "Crab And Corn Soup", category: "Brunch", price: 70 },
+    { name: "Cucumber Slush", category: "Shakes", price: 115 },
+    { name: "Dirty Matcha Latte", category: "Espresso", price: 130 },
+    { name: "Dirty Strawberry Latte", category: "Espresso", price: 130 },
+    { name: "Dragon Fruit", category: "Shakes", price: 120 },
+    { name: "Fish Fillet", category: "Brunch", price: 150 },
+    { name: "French Toast", category: "Sandwiches", price: 100 },
+    { name: "Fresh Buko", category: "Shakes", price: 80 },
+    { name: "Fries & Dip (Barbeque)", category: "Starter", price: 95 },
+    { name: "Fries & Dip (Cheese)", category: "Starter", price: 95 },
+    { name: "Fries & Dip (Original)", category: "Starter", price: 95 },
+    { name: "Fries & Dip (Sour Cream)", category: "Starter", price: 85 },
+    { name: "Fries Sour Cream", category: "Starter", price: 95 },
+    { name: "Fries W/ Chicken Strips", category: "Starter", price: 205 },
+    { name: "Frozen Iced Tea", category: "Non-Coffee Drinks", price: 80 },
+    { name: "Garlic Rice", category: "Brunch", price: 25 },
+    { name: "Garlic Truffle", category: "Pizza", price: 190 },
+    { name: "Grape Slush", category: "Shakes", price: 120 },
+    { name: "Ham And Egg Sandwich", category: "Sandwiches", price: 100 },
+    { name: "Ham And Egg With Rice", category: "Brunch", price: 115 },
+    { name: "Hazelnut Latte", category: "Espresso", price: 110 },
+    { name: "Hot Americano", category: "Espresso", price: 75 },
+    { name: "Hot Caramel Latte", category: "Espresso", price: 85 },
+    { name: "Hot Chocolate", category: "Non-Coffee Drinks", price: 85 },
+    { name: "Hot Mocha Latte", category: "Espresso", price: 120 },
+    { name: "Hot Tea", category: "Non-Coffee Drinks", price: 50 },
+    { name: "Hot Vanilla Latte", category: "Espresso", price: 95 },
+    { name: "Hungarian W/ Rice", category: "Brunch", price: 145 },
+    { name: "Hungarian W/ Egg", category: "Brunch", price: 115 },
+    { name: "Ice Cream", category: "Starter", price: 85 },
+    { name: "Iced Caffe Americano", category: "Espresso", price: 75 },
+    { name: "Iced Caffe Latte", category: "Espresso", price: 90 },
+    { name: "Iced Caramel Latte", category: "Espresso", price: 100 },
+    { name: "Iced Chocolate", category: "Non-Coffee Drinks", price: 110 },
+    { name: "Iced Matcha Latte", category: "Non-Coffee Drinks", price: 125 },
+    { name: "Lemon Cucumber", category: "Non-Coffee Drinks", price: 70 },
+    { name: "Lemon Iced Tea", category: "Non-Coffee Drinks", price: 70 },
+    { name: "Lemon Yakult", category: "Non-Coffee Drinks", price: 105 },
+    { name: "Lemonade", category: "Non-Coffee Drinks", price: 99 },
+    { name: "Longsilog", category: "Brunch", price: 95 },
+    { name: "Mango Shake", category: "Shakes", price: 115 },
+    { name: "Matcha Creme Frappe", category: "Non-Coffee Drinks", price: 115 },
+    { name: "Meat Wagon", category: "Pizza", price: 190 },
+    { name: "Mushroom Soup", category: "Brunch", price: 70 },
+    { name: "Nacho Fries", category: "Starter", price: 160 },
+    { name: "Nachos", category: "Starter", price: 120 },
+    { name: "Pesto Pasta (Chicken)", category: "Pastas", price: 180 },
+    { name: "Pesto Pasta (Tuna)", category: "Pastas", price: 180 },
+    { name: "Pesto Shrimp Pasta", category: "Pastas", price: 180 },
+    { name: "Pitcher", category: "Non-Coffee Drinks", price: 200 },
+    { name: "Pizza 3 Cheese", category: "Pizza", price: 190 },
+    { name: "Pizza Hawaiian", category: "Pizza", price: 190 },
+    { name: "Pizza Italian", category: "Pizza", price: 190 },
+    { name: "Pizza Pepperoni", category: "Pizza", price: 190 },
+    { name: "Pizza Zoila", category: "Pizza", price: 190 },
+    { name: "Pup Cup", category: "Dog Menu", price: 35 },
+    { name: "Pupsicle", category: "Dog Menu", price: 70 },
+    { name: "Royal In Can", category: "Softdrinks", price: 60 },
+    { name: "Set A", category: "Starter", price: 150 },
+    { name: "Set B", category: "Starter", price: 185 },
+    { name: "Set C", category: "Starter", price: 245 },
+    { name: "Shrimp Carbonara", category: "Pastas", price: 165 },
+    { name: "Shrimp Scampi", category: "Pastas", price: 180 },
+    { name: "Spam", category: "Brunch", price: 50 },
+    { name: "Spam & Egg W/ Rice", category: "Brunch", price: 115 },
+    { name: "Spam Sandwich", category: "Sandwiches", price: 105.55 },
+    { name: "Spanish Latte", category: "Espresso", price: 105 },
+    { name: "Sprite In Can", category: "Softdrinks", price: 60 },
+    { name: "Strawberry Frappe", category: "Shakes", price: 110 },
+    { name: "Strawberry Latte", category: "Non-Coffee Drinks", price: 130 },
+    { name: "Strawberry Red Tea", category: "Non-Coffee Drinks", price: 70 },
+    { name: "Strawberry Smoothie", category: "Shakes", price: 125 },
+    { name: "Strawberry Waffle", category: "Waffles", price: 140 },
+    { name: "Sweet And Sour Chicken W/Rice", category: "Brunch", price: 150 },
+    { name: "Tocino W/Rice", category: "Brunch", price: 95 },
+    { name: "Tuna Salad", category: "Salads", price: 220 },
+    { name: "Vanilla Caramel Frappe", category: "Non-Coffee Drinks", price: 115 },
+    { name: "Vanilla Latte", category: "Espresso", price: 100 },
+    { name: "Vanilla Waffle", category: "Waffles", price: 120 },
+    { name: "Watermelon Shake", category: "Shakes", price: 115 }
+  ];
+
+  // Extract unique categories from menuItems array and sort them alphabetically
+  const categories = [...new Set(menuItems.map(item => item.category))]
+  .sort((a, b) => {
+    // Move "Starter" to the beginning
+    if (a === "Starter") return -1;
+    if (b === "Starter") return 1;
+    // Sort other categories alphabetically
+    return a.localeCompare(b);
+  });
+
+  // Create the <ul> element
+  const menuFiltersUl = document.createElement('ul');
+  menuFiltersUl.id = 'menu-flters';
+
+  // Create and append the "Show All" list item
+  const showAllLi = document.createElement('li');
+  showAllLi.dataset.filter = '*';
+  showAllLi.textContent = 'Show All';
+  menuFiltersUl.appendChild(showAllLi);
+
+  // Iterate through the categories and create list items
+  categories.forEach(category => {
+  const filterLi = document.createElement('li');
+  filterLi.dataset.filter = `.filter-${category.toLowerCase().replace(/\s+/g, '-')}`;
+  filterLi.textContent = category;
+  menuFiltersUl.appendChild(filterLi);
+
+  // Add the "filter-active" class if the category is "Starter"
+  if (category === "Starter") {
+    filterLi.classList.add('filter-active');
+  }
+  });
+
+  // Get the target element with ID "menulist"
+  const menulistDiv = document.getElementById('menulist');
+
+  // Append the generated <ul> element to the "menulist" div
+  menulistDiv.appendChild(menuFiltersUl);
+  // End categories
+
+  const menuContainer = document.querySelector('.row.menu-container');
+
+  menuItems.forEach(item => {
+    const menuItemDiv = document.createElement('div');
+    menuItemDiv.classList.add('col-lg-6', 'menu-item');
+  
+    // Dynamically generate the filter class based on the category
+    const filterClass = `filter-${item.category.toLowerCase().replace(/\s+/g, '-')}`;
+    menuItemDiv.classList.add(filterClass);
+  
+    const menuContentDiv = document.createElement('div');
+    menuContentDiv.classList.add('menu-content');
+  
+    const itemNameLink = document.createElement('p');
+    itemNameLink.href = '#';
+    itemNameLink.textContent = item.name;
+  
+    const itemPriceSpan = document.createElement('span');
+    itemPriceSpan.textContent = item.price;
+  
+    menuContentDiv.appendChild(itemNameLink);
+    menuContentDiv.appendChild(itemPriceSpan);
+    menuItemDiv.appendChild(menuContentDiv);
+  
+    if (item.description) { // Check if the item has a description
+      const itemIngredientsDiv = document.createElement('div'); // Create a <div> for the description
+      itemIngredientsDiv.classList.add('menu-ingredients');
+      itemIngredientsDiv.textContent = item.description;
+      menuItemDiv.appendChild(itemIngredientsDiv); // Append the description
+    }
+  
+    // Step 3: Append the created elements to the menu container
+    menuContainer.appendChild(menuItemDiv);
+  });
+
   window.addEventListener('load', () => {
     let menuContainer = select('.menu-container');
     if (menuContainer) {
       let menuIsotope = new Isotope(menuContainer, {
         itemSelector: '.menu-item',
-        layoutMode: 'fitRows'
+        layoutMode: 'fitRows',
+        filter: '.filter-starter'
       });
 
       let menuFilters = select('#menu-flters li', true);
@@ -206,32 +404,7 @@
   /**
    * Testimonials slider
    */
-  new Swiper('.events-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
-
-  /**
-   * Initiate gallery lightbox 
-   */
-  const galleryLightbox = GLightbox({
-    selector: '.gallery-lightbox'
-  });
-
-  /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
+   new Swiper('.events-slider', {
     speed: 600,
     loop: true,
     autoplay: {
