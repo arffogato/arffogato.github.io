@@ -160,11 +160,12 @@ h6 {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 24px;
-  font-size: 15px;
   font-weight: 500;
   color: white;
   white-space: nowrap;
   transition: 0.3s;
+  font-family: 'Loved by the King';
+  font-size: 30px;
 }
 
 .navbar a i,
@@ -304,14 +305,17 @@ h6 {
 .navbar-mobile a,
 .navbar-mobile a:focus {
   padding: 10px 20px;
-  font-size: 15px;
   color: #433f39;
+  font-family: 'Loved by the King';
+  font-size: 25px;
 }
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
   color: #5d390a;
+  font-family: 'Loved by the King';
+  font-size: 30px;
 }
 
 .navbar-mobile .getstarted,
