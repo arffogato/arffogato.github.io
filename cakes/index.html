@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arffogato Dog Cakes – Order Dog Cakes Online</title>
+    <meta name="description" content="Handmade dog cakes baked with love. Order online for pickup at Camella Mandalagan. Safe, dog-friendly ingredients your furkids will love!" />
+
+    <!-- Open Graph / Facebook (critical since shared via FB) -->
+    <meta property="og:title" content="Arffogato Dog Cakes – Order Dog Cakes" />
+    <meta property="og:description" content="Handmade dog cakes baked with love. Pickup at Camella Mandalagan." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://arffogato.github.io/cakes/" />
+    <!-- Replace with your actual preview image URL -->
+    <!-- <meta property="og:image" content="https://arffogato.github.io/cakes/preview.jpg" /> -->
+
+    <!-- Fonts with font-display:swap to prevent invisible text during load -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+    <style>
+        :root {
+            --cream: #FFF8EE;
+            --cream2: #FFF0D4;
+            --brown: #3B1F0A;
+            --brown2: #6B3A1F;
+            --tan: #C8956C;
+            --gold: #E8A830;
+            --paw: #D4896A;
+            --white: #FFFFFF;
+            --error: #E74C3C;
+            --success: #27AE60;
+            --shadow: 0 4px 24px rgba(59, 31, 10, .12);
+            --shadow-lg: 0 12px 40px rgba(59, 31, 10, .18);
+            --radius: 18px;
+            --radius-sm: 12px;
+            --transition: all .22s ease;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--cream);
+            color: var(--brown);
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* ────────────────────────────
+           STICKY TOP CONTACT BAR
+           ──────────────────────────── */
+        .top-bar {
+            background: var(--brown);
+            color: var(--white);
+            text-align: center;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .2px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .top-bar a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, .1);
+            padding: 6px 14px;
+            border-radius: 99px;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        .top-bar a:hover {
+            background: rgba(255, 255, 255, .2);
+            transform: translateY(-1px);
+        }
+        .top-bar .dot {
+            width: 7px;
+            height: 7px;
+            background: #4ADE80;
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse-dot 2s infinite;
+        }
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .35;
+            }
+        }
+
+        /* ────────────────────────────
+           HERO
+           ──────────────────────────── */
+        .hero {
+            background: linear-gradient(135deg, #3B1F0A 0%, #6B3A1F 60%, #C8956C 100%);
+            padding: 44px 24px 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "🐾";
+            position: absolute;
+            font-size: 160px;
+            opacity: .06;
+            top: -20px;
+            right: -20px;
+            transform: rotate(20deg);
+        }
+        .hero::after {
+            content: "🐾";
+            position: absolute;
+            font-size: 120px;
+            opacity: .06;
+            bottom: -10px;
+            left: -10px;
+            transform: rotate(-15deg);
+        }
+        .hero-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 10px;
+        }
+        .paw-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .3);
+            flex-shrink: 0;
+        }
+        .hero h1 {
+            font-family: 'Fredoka One', cursive;
+            color: var(--white);
+            font-size: clamp(28px, 6vw, 48px);
+            letter-spacing: .5px;
+            line-height: 1.1;
+            text-align: left;
+        }
+        .hero h1 span {
+            color: var(--gold);
+        }
+        .hero-sub {
+            color: rgba(255, 255, 255, .75);
+            font-size: 15px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--brown);
+            font-weight: 800;
+            font-size: 13px;
+            padding: 5px 14px;
+            border-radius: 99px;
+            margin-top: 14px;
+        }
+
+        /* ────────────────────────────
+           ABOUT SECTION
+           ──────────────────────────── */
+        .about-section {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin: -20px 0 28px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .about-section h3 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 18px;
+            color: var(--brown2);
+            margin-bottom: 8px;
+        }
+        .about-section p {
+            font-size: 14px;
+            color: var(--brown2);
+            line-height: 1.7;
+            font-weight: 600;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .about-section .highlight {
+            color: var(--paw);
+            font-weight: 800;
+        }
+
+        /* ────────────────────────────
+           CONTAINER
+           ──────────────────────────── */
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 20px 100px;
+        }
+        .section-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 22px;
+            color: var(--brown2);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* ────────────────────────────
+           CAKE CARDS WITH PHOTO PLACEHOLDERS
+           ──────────────────────────── */
+        .cake-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+        .cake-card {
+            background: var(--white);
+            border: 3px solid transparent;
+            border-radius: var(--radius);
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            user-select: none;
+            overflow: hidden;
+            position: relative;
+        }
+        .cake-card:hover {
+            border-color: var(--tan);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        .cake-card.selected {
+            border-color: var(--gold);
+            background: #FFF8E1;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(232, 168, 48, .28);
+        }
+        /* Photo area */
+        .cake-photo {
+            width: 100%;
+            height: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cake-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .cake-photo-placeholder {
+            font-size: 48px;
+            opacity: .7;
+            transition: var(--transition);
+        }
+        .cake-card:hover .cake-photo-placeholder {
+            transform: scale(1.12);
+            opacity: .9;
+        }
+        /* Photo background colors per cake type (fallback until real photos) */
+        .cake-photo--classic {
+            background: linear-gradient(135deg, #FFF0F0, #FFE0E0);
+        }
+        .cake-photo--bone {
+            background: linear-gradient(135deg, #FFF8E7, #FFEFD5);
+        }
+        .cake-photo--minimalist {
+            background: linear-gradient(135deg, #F0FFF4, #E0FFE8);
+        }
+        .cake-photo--bowl {
+            background: linear-gradient(135deg, #FFF5EB, #FFE8D5);
+        }
+        .cake-photo--woof {
+            background: linear-gradient(135deg, #FFF0F5, #FFE0EC);
+        }
+        .cake-photo--heart {
+            background: linear-gradient(135deg, #FFF0FF, #F8E0FF);
+        }
+        /* Info area */
+        .cake-info {
+            padding: 12px 10px 14px;
+        }
+        .cake-card .cake-name {
+            font-family: 'Fredoka One', cursive;
+            font-size: 14px;
+            color: var(--brown);
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+        .cake-card .cake-price {
+            font-size: 13px;
+            color: var(--brown2);
+            font-weight: 800;
+            background: var(--cream2);
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 99px;
+        }
+        .cake-card .selected-check {
+            display: none;
+            width: 26px;
+            height: 26px;
+            background: var(--gold);
+            border-radius: 50%;
+            color: var(--brown);
+            font-size: 14px;
+            font-weight: 900;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+            z-index: 3;
+        }
+        .cake-card.selected .selected-check {
+            display: flex;
+        }
+
+        /* ────────────────────────────
+           HAPPY BARKS GALLERY
+           ──────────────────────────── */
+        .gallery-section {
+            margin-bottom: 32px;
+        }
+        .gallery-scroll {
+            display: flex;
+            gap: 14px;
+            overflow-x: auto;
+            padding: 4px 0 12px;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+        }
+        .gallery-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+        .gallery-scroll::-webkit-scrollbar-thumb {
+            background: var(--tan);
+            border-radius: 99px;
+        }
+        .gallery-card {
+            min-width: 150px;
+            max-width: 160px;
+            background: var(--white);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow);
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+        .gallery-photo {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, #FFF3DC, #FFE8C0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 44px;
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-caption {
+            padding: 8px 10px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--brown2);
+        }
+
+        /* ────────────────────────────
+           FORM CARD
+           ──────────────────────────── */
+        .form-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            box-shadow: var(--shadow);
+            margin-bottom: 24px;
+            position: relative;
+        }
+        .form-card.hidden {
+            display: none;
+        }
+        .form-row {
+            margin-bottom: 18px;
+        }
+        label {
+            display: block;
+            font-weight: 800;
+            font-size: 14px;
+            color: var(--brown2);
+            margin-bottom: 6px;
+        }
+        label .req {
+            color: var(--error);
+            margin-left: 2px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="datetime-local"],
+        select,
+        textarea {
+            width: 100%;
+            background: var(--cream);
+            border: 2px solid #E8D5C0;
+            border-radius: var(--radius-sm);
+            padding: 13px 16px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 15px;
+            color: var(--brown);
+            outline: none;
+            transition: border-color .2s, background .2s, box-shadow .2s;
+            -webkit-appearance: none;
+            appearance: none;
+            min-height: 48px;
+        }
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--gold);
+            background: #FFFDF5;
+            box-shadow: 0 0 0 4px rgba(232, 168, 48, .1);
+        }
+        input.input-error,
+        select.input-error,
+        textarea.input-error {
+            border-color: var(--error) !important;
+            background: #FFF5F5 !important;
+            animation: shake .5s ease;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        @keyframes shake {
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+            20% {
+                transform: translateX(-8px);
+            }
+            40% {
+                transform: translateX(8px);
+            }
+            60% {
+                transform: translateX(-5px);
+            }
+            80% {
+                transform: translateX(5px);
+            }
+        }
+
+        /* Color swatches - min 44px tap target */
+        .color-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 4px;
+        }
+        .color-opt {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            min-height: 44px;
+            border: 2px solid #E8D5C0;
+            border-radius: 99px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            transition: var(--transition);
+            background: var(--white);
+            white-space: nowrap;
+        }
+        .color-opt:hover {
+            border-color: var(--tan);
+            background: #FFFBF5;
+        }
+        .color-opt.selected {
+            border-color: var(--gold);
+            background: #FFF8E1;
+            box-shadow: 0 2px 12px rgba(232, 168, 48, .2);
+        }
+        .color-opt.disabled {
+            opacity: .45;
+            cursor: not-allowed;
+            background: #F4EEE7;
+            border-color: #D8C9BA;
+        }
+        .color-opt.disabled:hover {
+            border-color: #D8C9BA;
+            background: #F4EEE7;
+        }
+        .swatch {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 0, 0, .1);
+            flex-shrink: 0;
+        }
+
+        /* Size buttons */
+        .size-grid {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+        .size-btn {
+            flex: 1;
+            min-width: 110px;
+            min-height: 52px;
+            padding: 14px 12px;
+            border: 2px solid #E8D5C0;
+            border-radius: var(--radius-sm);
+            background: var(--white);
+            cursor: pointer;
+            text-align: center;
+            font-family: 'Nunito', sans-serif;
+            transition: var(--transition);
+        }
+        .size-btn:hover {
+            border-color: var(--tan);
+            background: #FFFBF5;
+        }
+        .size-btn.selected {
+            border-color: var(--gold);
+            background: #FFF8E1;
+            box-shadow: 0 2px 12px rgba(232, 168, 48, .2);
+        }
+        .size-btn .sz-label {
+            font-weight: 800;
+            font-size: 15px;
+            color: var(--brown);
+            display: block;
+        }
+        .size-btn .sz-price {
+            font-size: 13px;
+            color: var(--brown2);
+            font-weight: 700;
+        }
+
+        /* ────────────────────────────
+           ORDER SUMMARY (inside form)
+           ──────────────────────────── */
+        .order-summary {
+            background: linear-gradient(135deg, #FFFDF5, #FFF8E1);
+            border: 2px solid var(--gold);
+            border-radius: var(--radius-sm);
+            padding: 16px 18px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .order-summary.visible {
+            display: block;
+        }
+        .order-summary h4 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 16px;
+            color: var(--brown);
+            margin-bottom: 8px;
+        }
+        .order-summary .sum-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--brown2);
+            padding: 3px 0;
+        }
+        .order-summary .sum-total {
+            border-top: 2px dashed var(--tan);
+            margin-top: 8px;
+            padding-top: 8px;
+            font-family: 'Fredoka One', cursive;
+            font-size: 18px;
+            color: var(--brown);
+        }
+
+        /* Note boxes */
+        .note-box {
+            background: linear-gradient(135deg, #FFF3DC, #FFE8C0);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 14px 18px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--brown2);
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+        .note-box strong {
+            color: var(--brown);
+            display: block;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+        .error-summary {
+            background: #FFF5F5;
+            border-left: 4px solid var(--error);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 14px 18px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--error);
+            margin-bottom: 16px;
+            display: none;
+            line-height: 1.7;
+        }
+        .error-summary.visible {
+            display: block;
+            animation: shake .5s ease;
+        }
+
+        /* Pickup hint text */
+        .pickup-hint {
+            font-size: 12px;
+            color: var(--paw);
+            font-weight: 700;
+            margin-top: 6px;
+        }
+
+        /* Submit & Messenger buttons */
+        .btn-row {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            min-height: 56px;
+            background: linear-gradient(135deg, var(--brown) 0%, var(--brown2) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius);
+            font-family: 'Fredoka One', cursive;
+            font-size: 20px;
+            letter-spacing: .5px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 6px 24px rgba(59, 31, 10, .28);
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 32px rgba(59, 31, 10, .36);
+        }
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        .submit-btn:disabled {
+            opacity: .6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .messenger-btn {
+            width: 100%;
+            padding: 14px;
+            min-height: 50px;
+            background: #0084FF;
+            color: #fff;
+            border: none;
+            border-radius: var(--radius);
+            font-family: 'Fredoka One', cursive;
+            font-size: 16px;
+            letter-spacing: .3px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 16px rgba(0, 132, 255, .25);
+        }
+        .messenger-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 132, 255, .35);
+            background: #0073E6;
+        }
+        .messenger-btn:active {
+            transform: translateY(0);
+        }
+
+        /* ────────────────────────────
+           FLOATING MESSENGER BUTTON
+           ──────────────────────────── */
+        .floating-messenger {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 200;
+            width: 56px;
+            height: 56px;
+            background: #0084FF;
+            border-radius: 50%;
+            box-shadow: 0 6px 24px rgba(0, 132, 255, .4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            text-decoration: none;
+            transition: var(--transition);
+            animation: float-bob 3s ease-in-out infinite;
+        }
+        .floating-messenger:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 32px rgba(0, 132, 255, .5);
+        }
+        @keyframes float-bob {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+        .floating-messenger .tooltip {
+            position: absolute;
+            right: 64px;
+            background: var(--brown);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 99px;
+            font-size: 12px;
+            font-weight: 700;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .25s;
+        }
+        .floating-messenger:hover .tooltip {
+            opacity: 1;
+        }
+
+        /* ────────────────────────────
+           MODAL
+           ──────────────────────────── */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .5);
+            backdrop-filter: blur(4px);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal-overlay.show {
+            display: flex;
+        }
+        .modal {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 36px 28px;
+            max-width: 460px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
+            animation: popIn .35s cubic-bezier(.34, 1.56, .64, 1) both;
+        }
+        @keyframes popIn {
+            from {
+                transform: scale(.7);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .modal .big-paw {
+            font-size: 64px;
+            margin-bottom: 12px;
+        }
+        .modal h2 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 26px;
+            color: var(--brown);
+            margin-bottom: 10px;
+        }
+        .modal-summary {
+            background: var(--cream2);
+            border-radius: 14px;
+            padding: 16px 18px;
+            text-align: left;
+            font-size: 13px;
+            line-height: 2;
+            margin-bottom: 18px;
+            color: var(--brown);
+        }
+        .modal-summary .row {
+            display: flex;
+            gap: 8px;
+        }
+        .modal-summary .lbl {
+            font-weight: 800;
+            min-width: 90px;
+            color: var(--brown2);
+        }
+        .cal-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gold);
+            color: var(--brown);
+            font-family: 'Fredoka One', cursive;
+            font-size: 16px;
+            padding: 14px 28px;
+            border-radius: 99px;
+            text-decoration: none;
+            transition: all .2s;
+            margin-bottom: 12px;
+            min-height: 48px;
+        }
+        .cal-btn:hover {
+            transform: scale(1.04);
+            background: #F5BA3A;
+        }
+        .modal-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 13px;
+            color: var(--tan);
+            font-weight: 700;
+            font-family: 'Nunito', sans-serif;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            color: var(--tan);
+            font-weight: 600;
+        }
+        .hidden {
+            display: none !important;
+        }
+
+        /* ────────────────────────────
+           RESPONSIVE TWEAKS
+           ──────────────────────────── */
+        @media (max-width: 480px) {
+            .cake-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .cake-photo {
+                height: 100px;
+            }
+            .cake-photo-placeholder {
+                font-size: 36px;
+            }
+            .cake-card .cake-name {
+                font-size: 12px;
+            }
+            .cake-card .cake-price {
+                font-size: 11px;
+            }
+            .form-card {
+                padding: 20px 16px;
+            }
+            .color-opt {
+                padding: 8px 12px;
+                font-size: 12px;
+                gap: 6px;
+            }
+            .swatch {
+                width: 15px;
+                height: 15px;
+            }
+            .floating-messenger {
+                bottom: 16px;
+                right: 16px;
+                width: 48px;
+                height: 48px;
+                font-size: 24px;
+            }
+            .floating-messenger .tooltip {
+                display: none;
+            }
+            .gallery-card {
+                min-width: 130px;
+                max-width: 140px;
+            }
+            .gallery-photo {
+                height: 100px;
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════════════════
+         STICKY TOP CONTACT BAR
+         ═══════════════════════════ -->
+    <div class="top-bar">
+        <span class="dot"></span> Open for orders daily
+        &nbsp;·&nbsp;
+        <a href="https://m.me/arffogatobcd" target="_blank" rel="noopener">
+            💬 Chat us on Messenger
+        </a>
+    </div>
+
+    <!-- ═══════════════════════════
+         HERO
+         ═══════════════════════════ -->
+    <div class="hero">
+        <div class="hero-logo">
+            <div class="paw-icon">🐾</div>
+            <h1>ARFFOGATO<br><span>DOG CAKES</span></h1>
+        </div>
+        <p class="hero-sub">dog cakes — baked with love 🎂</p>
+        <span class="badge">📅 Order 1 Day Ahead · Pickup at Camella Mandalagan</span>
+    </div>
+
+    <div class="container">
+
+        <!-- ═══════════════════════════
+             ABOUT US
+             ═══════════════════════════ -->
+        <div class="about-section">
+            <h3>🐶 Baked for Your Furkids</h3>
+            <p>
+                Hi, we're <span class="highlight">Arffogato</span> — a small-batch dog cake bakery
+                based in <span class="highlight">Bacolod</span>. Every cake is handmade with
+                <span class="highlight">100% dog-safe ingredients</span>, using meaty cake layers
+                instead of chiffon and creamy potato icing made just for wagging tails, zero harmful additives,
+                and a whole lot of love. Because your best friend deserves the very best on their
+                special day. 🎉
+            </p>
+        </div>
+
+        <!-- ═══════════════════════════
+             STEP 1: CHOOSE CAKE
+             ═══════════════════════════ -->
+        <p class="section-title">🎂 Step 1: Choose Your Cake</p>
+        <div class="cake-grid" id="cakeGrid">
+
+            <!-- Classic Dog Cake -->
+            <div class="cake-card" data-cake="Classic Dog Cake"
+            data-sizes='[{"label":"4 inch","price":550},{"label":"6 inch","price":750}]'
+            data-colors='["Pink","Blue","Yellow","Green","Purple","Orange","White"]' data-note="">
+            <div class="cake-photo cake-photo--classic">
+                <!-- REPLACE with real photo: <img src="classic-dog-cake.jpg" alt="Classic Dog Cake"> -->
+                <span class="cake-photo-placeholder">🎂</span>
+            </div>
+            <div class="cake-info">
+                <div class="cake-name">Classic Dog Cake</div>
+                <div class="cake-price">From ₱550</div>
+            </div>
+            <div class="selected-check">✓</div>
+        </div>
+
+        <!-- Bone & Paw Dog Cake -->
+        <div class="cake-card" data-cake="Bone & Paw Dog Cake"
+        data-sizes='[{"label":"4 inch","price":550},{"label":"6 inch","price":750}]'
+        data-colors='["White (default)"]' data-note="Cake color is white only.">
+        <div class="cake-photo cake-photo--bone">
+            <!-- REPLACE with: <img src="bone-paw-cake.jpg" alt="Bone & Paw Dog Cake"> -->
+            <span class="cake-photo-placeholder">🦴</span>
+        </div>
+        <div class="cake-info">
+            <div class="cake-name">Bone & Paw Dog Cake</div>
+            <div class="cake-price">From ₱550</div>
+        </div>
+        <div class="selected-check">✓</div>
+    </div>
+
+    <!-- Minimalist Dog Cake -->
+    <div class="cake-card" data-cake="Minimalist Dog Cake"
+    data-sizes='[{"label":"4 inch","price":550},{"label":"6 inch","price":750}]'
+    data-colors='["Pink/Red","Blue","Yellow","Green","Purple","Orange","White"]'
+    data-note="Cake color applies to the smudges on top only.">
+    <div class="cake-photo cake-photo--minimalist">
+        <!-- REPLACE with: <img src="minimalist-cake.jpg" alt="Minimalist Dog Cake"> -->
+        <span class="cake-photo-placeholder">✨</span>
+    </div>
+    <div class="cake-info">
+        <div class="cake-name">Minimalist Dog Cake</div>
+        <div class="cake-price">From ₱550</div>
+    </div>
+    <div class="selected-check">✓</div>
+</div>
+
+<!-- Dog Bowl Cake -->
+<div class="cake-card" data-cake="Dog Bowl Cake"
+data-sizes='[{"label":"4 inch","price":580},{"label":"6 inch","price":780}]'
+data-colors='["Pink/Red","Blue","Yellow","Green","Purple","Orange","White"]'
+data-note="Name will be written on a white bone, please avoid white font color.">
+<div class="cake-photo cake-photo--bowl">
+    <!-- REPLACE with: <img src="dog-bowl-cake.jpg" alt="Dog Bowl Cake"> -->
+    <span class="cake-photo-placeholder">🐶</span>
+</div>
+<div class="cake-info">
+    <div class="cake-name">Dog Bowl Cake</div>
+    <div class="cake-price">From ₱580</div>
+</div>
+<div class="selected-check">✓</div>
+</div>
+
+<!-- Woof U Dog Cake -->
+<div class="cake-card" data-cake="Woof U Dog Cake"
+data-sizes='[{"label":"4 inch","price":550},{"label":"6 inch","price":750}]'
+data-colors='["Pink/Red","Blue","Yellow","Green","Purple","Orange","White"]' data-note="">
+<div class="cake-photo cake-photo--woof">
+    <!-- REPLACE with: <img src="woof-u-cake.jpg" alt="Woof U Dog Cake"> -->
+    <span class="cake-photo-placeholder">❤️</span>
+</div>
+<div class="cake-info">
+    <div class="cake-name">Woof U Dog Cake</div>
+    <div class="cake-price">From ₱550</div>
+</div>
+<div class="selected-check">✓</div>
+</div>
+
+<!-- Heart Dog Cake -->
+<div class="cake-card" data-cake="Heart Dog Cake"
+data-sizes='[{"label":"6 inch","price":810}]'
+data-colors='["Pink/Red","Blue","Yellow","Green","Purple","Orange","White"]' data-note="">
+<div class="cake-photo cake-photo--heart">
+    <!-- REPLACE with: <img src="heart-cake.jpg" alt="Heart Dog Cake"> -->
+    <span class="cake-photo-placeholder">💖</span>
+</div>
+<div class="cake-info">
+    <div class="cake-name">Heart Dog Cake</div>
+    <div class="cake-price">₱810</div>
+</div>
+<div class="selected-check">✓</div>
+</div>
+
+</div>
+
+<!-- ═══════════════════════════
+     HAPPY BARKS GALLERY
+     ═══════════════════════════ -->
+<div class="gallery-section">
+    <p class="section-title">📸 Happy Barks</p>
+    <div class="gallery-scroll">
+        <div class="gallery-card">
+            <div class="gallery-photo">
+                <!-- REPLACE with: <img src="happy-dog-1.jpg" alt="Happy dog with cake"> -->
+                🐕
+            </div>
+            <div class="gallery-caption">"Oreo loved it! 🖤"</div>
+        </div>
+        <div class="gallery-card">
+            <div class="gallery-photo">
+                <!-- REPLACE with: <img src="happy-dog-2.jpg" alt="Happy dog with cake"> -->
+                🐩
+            </div>
+            <div class="gallery-caption">"Best barkday ever! 🎉"</div>
+        </div>
+        <div class="gallery-card">
+            <div class="gallery-photo">
+                <!-- REPLACE with: <img src="happy-dog-3.jpg" alt="Happy dog with cake"> -->
+                🦮
+            </div>
+            <div class="gallery-caption">"Tala says 5 stars ⭐"</div>
+        </div>
+        <div class="gallery-card">
+            <div class="gallery-photo">
+                <!-- REPLACE with: <img src="happy-dog-4.jpg" alt="Happy dog with cake"> -->
+                🐕‍🦺
+            </div>
+            <div class="gallery-caption">"So pretty & yummy! 😍"</div>
+        </div>
+        <div class="gallery-card">
+            <div class="gallery-photo">
+                <!-- REPLACE with: <img src="happy-dog-5.jpg" alt="Happy dog with cake"> -->
+                🐶
+            </div>
+            <div class="gallery-caption">"Max approved! 👍"</div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════
+     FORM CARD
+     ═══════════════════════════ -->
+<div class="form-card hidden" id="formCard">
+    <p class="section-title">📋 Step 2: Fill in Your Details</p>
+
+    <!-- Order Summary (updates live) -->
+    <div class="order-summary" id="orderSummary">
+        <h4>🧾 Your Order</h4>
+        <div id="orderSummaryContent"></div>
+    </div>
+
+    <!-- Error summary (shown on validation failure) -->
+    <div class="error-summary" id="errorSummary"></div>
+
+    <div class="form-row">
+        <label for="custName">Your Name <span class="req">*</span></label>
+        <input type="text" id="custName" placeholder="e.g. Maria Santos" />
+    </div>
+
+    <div class="form-row">
+        <label for="custContact">Contact Number <span class="req">*</span></label>
+        <input type="tel" id="custContact" placeholder="e.g. 09xxxxxxxxx" />
+    </div>
+
+    <!-- SIZE -->
+    <div class="form-row">
+        <label>Size <span class="req">*</span></label>
+        <div class="size-grid" id="sizeGrid"></div>
+    </div>
+
+    <!-- CAKE COLOR -->
+    <div class="form-row" id="cakeColorRow">
+        <label>Cake Color <span class="req">*</span></label>
+        <div class="color-grid" id="cakeColorGrid"></div>
+        <div id="cakeColorNote" style="font-size:12px;color:var(--paw);font-weight:700;margin-top:6px;"></div>
+    </div>
+
+    <!-- FONT COLOR -->
+    <div class="form-row">
+        <label>Font Color <span class="req">*</span></label>
+        <div class="color-grid" id="fontColorGrid"></div>
+    </div>
+
+    <!-- DOG NAME -->
+    <div class="form-row hidden" id="dogNameRow">
+        <label for="dogName" id="dogNameLabel">Dog Name <span class="req">*</span>
+            <span id="dogNameHint" style="font-weight:400;font-size:12px;">(name on bowl · +₱100 per extra name)</span>
+        </label>
+        <input type="text" id="dogName" placeholder="e.g. Oreo" />
+    </div>
+
+    <!-- DEDICATION -->
+    <div class="form-row hidden" id="dedicationRow">
+        <label for="dedication">Dedication <span class="req">*</span>
+            <span style="font-weight:400;font-size:12px;">(for 6-inch cake)</span>
+        </label>
+        <input type="text" id="dedication" placeholder='e.g. Happy 3rd Barkday, Tala! 🐾' />
+    </div>
+
+    <!-- PICKUP -->
+    <div class="form-row">
+        <label for="pickupDate">Date & Time of Pickup <span class="req">*</span></label>
+        <input type="datetime-local" id="pickupDate" />
+        <div class="pickup-hint" id="pickupHint">📅 Earliest pickup: tomorrow. Same-day orders are not accepted.</div>
+    </div>
+
+    <!-- NOTES -->
+    <div class="form-row">
+        <label for="notes">Special Requests / Notes</label>
+        <textarea id="notes" placeholder="Any special requests, allergies, or notes..."></textarea>
+    </div>
+
+    <div class="note-box" id="cakeNoteBox" style="display:none;"></div>
+
+    <div class="note-box">
+        <strong>📌 Reminders</strong>
+        1. Orders must be placed at least 1 day ahead. Same-day pickup is not available.<br>
+        2. We are closed on Saturdays.<br>
+        3. Pickup at Camella Mandalagan.<br>
+        4. Dog Bowl Cake: +₱100 per additional name on the bone.<br>
+        5. You'll receive a confirmation after submission.
+    </div>
+
+    <div class="btn-row">
+        <button class="submit-btn" id="submitBtn" onclick="handleSubmit()">
+            🐾 Place My Order
+        </button>
+        <a class="messenger-btn" href="https://m.me/arffogatobcd" target="_blank" rel="noopener"
+        id="messengerOrderBtn">
+        💬 Order via Messenger Instead
+    </a>
+</div>
+</div>
+
+</div>
+
+<!-- ═══════════════════════════
+     FLOATING MESSENGER BUTTON
+     ═══════════════════════════ -->
+<a href="https://m.me/arffogatobcd" target="_blank" rel="noopener" class="floating-messenger"
+aria-label="Chat with us on Messenger">
+<span class="tooltip">Chat with us!</span>
+💬
+</a>
+
+<!-- ═══════════════════════════
+     SUCCESS MODAL
+     ═══════════════════════════ -->
+<div class="modal-overlay" id="modal">
+    <div class="modal">
+        <div class="big-paw">🐾</div>
+        <h2>Order Received!</h2>
+        <div class="modal-summary" id="modalSummary"></div>
+        <a class="cal-btn" id="calLink" href="#" target="_blank" rel="noopener">📅 Add to Google Calendar</a><br>
+        <button class="modal-close" onclick="document.getElementById('modal').classList.remove('show')">Close</button>
+    </div>
+</div>
+
+<footer>Made with 🐾 · Arffogato Dog Cakes · Bacolod</footer>
+
+<script>
+    // 🔴 CONFIGURE: Your deployed Google Cloud Run / Firebase Function URL
+    const CLOUD_FUNCTION_URL = 'https://submitorder-2ujcvwlrla-uc.a.run.app';
+
+    // 🔴 CONFIGURE: Your Facebook Page username (for Messenger links)
+    const FB_PAGE_USERNAME = 'arffogatobcd'; // → https://m.me/arffogatobcd
+
+    const FONT_COLORS = ["Pink/Red", "Blue", "Yellow", "Green", "Purple", "Orange", "White", "Black", "Brown/Chocolate"];
+    const SWATCH_MAP = {
+        "Pink": "#F9A8D4",
+        "Pink/Red": "#F87171",
+        "Blue": "#60A5FA",
+        "Yellow": "#FDE047",
+        "Green": "#86EFAC",
+        "Purple": "#C084FC",
+        "Orange": "#FB923C",
+        "White (default)": "#F5F5F5",
+        "Black": "#1C1C1C",
+        "Brown/Chocolate": "#7C4A1E",
+        "White": "#F5F5F5"
+    };
+
+    let selectedCake = null,
+        selectedSize = null,
+        selectedCakeColor = null,
+        selectedFontColor = null;
+    let currentCakeSizes = [];
+    let currentCakeNote = '';
+
+    // ──────────────────────────────
+    //  SAME-DAY PREVENTION: Set min
+    //  pickup date to tomorrow
+    // ──────────────────────────────
+    function getTomorrowMidnight() {
+        const now = new Date();
+        // Get tomorrow's date at 00:00 in local timezone
+        const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+        // Format as YYYY-MM-DDTHH:MM for datetime-local input
+        const year = tomorrow.getFullYear();
+        const month = String(tomorrow.getMonth() + 1).padStart(2, '0');
+        const day = String(tomorrow.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}T00:00`;
+    }
+
+    function setMinPickupDate() {
+        const pickupInput = document.getElementById('pickupDate');
+        const minDate = getTomorrowMidnight();
+        pickupInput.setAttribute('min', minDate);
+
+        // Update the hint text to show the earliest available date
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const options = { weekday: 'long', month: 'short', day: 'numeric' };
+        const tomorrowStr = tomorrow.toLocaleDateString('en-PH', options);
+        document.getElementById('pickupHint').textContent =
+            `📅 Earliest pickup: ${tomorrowStr}. Same-day orders are not accepted. Saturdays are closed.`;
+    }
+
+    // Set min date on page load
+    setMinPickupDate();
+
+    // ── Cake card selection ──
+    document.querySelectorAll('.cake-card').forEach(card => {
+        card.addEventListener('click', () => {
+            document.querySelectorAll('.cake-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            selectedCake = card.dataset.cake;
+            currentCakeSizes = JSON.parse(card.dataset.sizes);
+            currentCakeNote = card.dataset.note || '';
+            buildForm(card);
+        });
+    });
+
+    function buildForm(card) {
+        const sizes = JSON.parse(card.dataset.sizes);
+        const colors = JSON.parse(card.dataset.colors);
+        const note = card.dataset.note;
+        const disableWhiteFont = card.dataset.cake === 'Dog Bowl Cake';
+        selectedSize = null;
+        selectedCakeColor = null;
+        selectedFontColor = null;
+
+        // Re-apply min date (in case it was somehow cleared)
+        setMinPickupDate();
+
+        // ── Sizes ──
+        const sizeGrid = document.getElementById('sizeGrid');
+        sizeGrid.innerHTML = '';
+        sizes.forEach(s => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'size-btn';
+            btn.innerHTML =
+                `<span class="sz-label">${s.label}</span><span class="sz-price">₱${s.price.toLocaleString()}</span>`;
+            btn.onclick = () => {
+                document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                selectedSize = s.label;
+                updateTextFields(s.label);
+                updateOrderSummary();
+            };
+            sizeGrid.appendChild(btn);
+        });
+        if (sizes.length === 1) sizeGrid.querySelector('.size-btn').click();
+
+        // ── Cake colors ──
+        const cGrid = document.getElementById('cakeColorGrid');
+        cGrid.innerHTML = '';
+        if (colors[0] === "White (default)") {
+            cGrid.innerHTML =
+                '<span style="font-size:13px;font-weight:700;color:var(--brown2);padding:10px 0;display:block;">White (default)</span>';
+            selectedCakeColor = 'White';
+            document.getElementById('cakeColorRow').style.opacity = '.6';
+        } else {
+            document.getElementById('cakeColorRow').style.opacity = '1';
+            colors.forEach(c => buildColorChip(cGrid, c, 'cake'));
+        }
+        document.getElementById('cakeColorNote').textContent = note || '';
+
+        // ── Font colors ──
+        const fGrid = document.getElementById('fontColorGrid');
+        fGrid.innerHTML = '';
+        FONT_COLORS.forEach(c => buildColorChip(fGrid, c, 'font', disableWhiteFont && c === 'White'));
+
+        // ── Note box ──
+        const nb = document.getElementById('cakeNoteBox');
+        if (note) {
+            nb.innerHTML = `<strong>ℹ️ Note</strong>${note}`;
+            nb.style.display = 'block';
+        } else {
+            nb.style.display = 'none';
+        }
+
+        updateTextFields(selectedSize);
+        updateOrderSummary();
+        document.getElementById('formCard').classList.remove('hidden');
+        document.getElementById('formCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function buildColorChip(grid, colorName, type, disabled = false) {
+        const chip = document.createElement('div');
+        chip.className = `color-opt${disabled ? ' disabled' : ''}`;
+        chip.innerHTML =
+            `<div class="swatch" style="background:${SWATCH_MAP[colorName]||'#ccc'}"></div>${colorName}`;
+        chip.onclick = () => {
+            if (disabled) return;
+            grid.querySelectorAll('.color-opt').forEach(c => c.classList.remove('selected'));
+            chip.classList.add('selected');
+            if (type === 'cake') {
+                selectedCakeColor = colorName;
+            } else {
+                selectedFontColor = colorName;
+            }
+            updateOrderSummary();
+        };
+        grid.appendChild(chip);
+    }
+
+    function updateTextFields(sizeLabel) {
+        const isDogBowl = selectedCake === 'Dog Bowl Cake';
+        const is6inch = sizeLabel === '6 inch';
+        const is4inch = sizeLabel === '4 inch';
+        const showDogName = isDogBowl || is4inch;
+
+        document.getElementById('dogNameRow').classList.toggle('hidden', !showDogName);
+        document.getElementById('dedicationRow').classList.toggle('hidden', !(is6inch && !isDogBowl));
+
+        const dogNameHint = document.getElementById('dogNameHint');
+        if (isDogBowl) {
+            dogNameHint.textContent = '(name on bowl · +₱100 per extra name)';
+        } else {
+            dogNameHint.textContent = '(for 4-inch cake)';
+        }
+        updateOrderSummary();
+    }
+
+    // ── Live order summary ──
+    function updateOrderSummary() {
+        const summary = document.getElementById('orderSummary');
+        const content = document.getElementById('orderSummaryContent');
+        if (!selectedCake || !selectedSize) {
+            summary.classList.remove('visible');
+            return;
+        }
+        summary.classList.add('visible');
+
+        const sizeObj = currentCakeSizes.find(s => s.label === selectedSize);
+        let basePrice = sizeObj ? sizeObj.price : 0;
+        let extras = [];
+
+        if (selectedCake === 'Dog Bowl Cake') {
+            const dogNameRaw = document.getElementById('dogName').value.trim();
+            if (dogNameRaw) {
+                const nameCount = dogNameRaw.split(/[,&]+/).filter(n => n.trim().length > 0).length;
+                if (nameCount > 1) {
+                    const extraCharge = (nameCount - 1) * 100;
+                    basePrice += extraCharge;
+                    extras.push(`+₱${extraCharge} (${nameCount} names)`);
+                }
+            }
+        }
+
+        let rows = `
+            <div class="sum-row"><span>🎂 ${selectedCake}</span><span></span></div>
+            <div class="sum-row"><span>📏 ${selectedSize}</span><span>₱${sizeObj?.price.toLocaleString()||'—'}</span></div>`;
+        if (selectedCakeColor) {
+            rows +=
+                `<div class="sum-row"><span>🎨 Cake Color</span><span>${selectedCakeColor}</span></div>`;
+        }
+        if (selectedFontColor) {
+            rows +=
+                `<div class="sum-row"><span>✍️ Font Color</span><span>${selectedFontColor}</span></div>`;
+        }
+        if (extras.length) {
+            extras.forEach(e => {
+                rows +=
+                    `<div class="sum-row"><span>🏷️ Extra names</span><span style="color:var(--paw);">${e}</span></div>`;
+            });
+        }
+        rows +=
+            `<div class="sum-row sum-total"><span>💰 Total</span><span>₱${basePrice.toLocaleString()}</span></div>`;
+
+        content.innerHTML = rows;
+    }
+
+    // Listen for dog name changes to update summary
+    document.getElementById('dogName').addEventListener('input', updateOrderSummary);
+
+    // ── Clear error styling on input ──
+    document.querySelectorAll('input, select, textarea').forEach(el => {
+        el.addEventListener('input', () => {
+            el.classList.remove('input-error');
+            document.getElementById('errorSummary').classList.remove('visible');
+        });
+        el.addEventListener('change', () => {
+            el.classList.remove('input-error');
+            document.getElementById('errorSummary').classList.remove('visible');
+        });
+    });
+
+    // ── Helper: Check if a date string is today (in local timezone) ──
+    function isToday(dateString) {
+        if (!dateString) return false;
+        const selected = new Date(dateString);
+        const now = new Date();
+        // Compare date parts only (year, month, day)
+        return selected.getFullYear() === now.getFullYear() &&
+            selected.getMonth() === now.getMonth() &&
+            selected.getDate() === now.getDate();
+    }
+
+    // ── Helper: Check if a date string is in the past ──
+    function isPast(dateString) {
+        if (!dateString) return false;
+        const selected = new Date(dateString);
+        const now = new Date();
+        // Set now to start of today for fair comparison
+        const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        return selected < todayStart;
+    }
+
+    function isSaturday(dateString) {
+        if (!dateString) return false;
+        const selected = new Date(dateString);
+        return selected.getDay() === 6;
+    }
+
+    // ── Submit handler with inline validation ──
+    async function handleSubmit() {
+        const name = document.getElementById('custName').value.trim();
+        const contact = document.getElementById('custContact').value.trim();
+        const pickup = document.getElementById('pickupDate').value;
+        const notes = document.getElementById('notes').value.trim();
+        const dogName = document.getElementById('dogName').value.trim();
+        const dedication = document.getElementById('dedication').value.trim();
+
+        const isDogBowl = selectedCake === 'Dog Bowl Cake';
+        const is6inch = selectedSize === '6 inch';
+        const is4inch = selectedSize === '4 inch';
+
+        // Clear previous errors
+        document.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
+        const errorSummary = document.getElementById('errorSummary');
+        errorSummary.classList.remove('visible');
+
+        const missingFields = [];
+        const errorElements = [];
+
+        function markMissing(selector, label) {
+            const el = document.querySelector(selector);
+            if (el) {
+                missingFields.push(label);
+                errorElements.push(el);
+                el.classList.add('input-error');
+            }
+        }
+
+        if (!name) markMissing('#custName', 'Your Name');
+        if (!contact) markMissing('#custContact', 'Contact Number');
+        if (!selectedCake) missingFields.push('Cake Type (select one above)');
+        if (!selectedSize) missingFields.push('Size');
+        if (!selectedCakeColor) missingFields.push('Cake Color');
+        if (!selectedFontColor) missingFields.push('Font Color');
+        if ((isDogBowl || is4inch) && !dogName) {
+            markMissing('#dogName', isDogBowl ? 'Dog Name (for Dog Bowl Cake)' : 'Dog Name (for 4-inch cake)');
+        }
+        if (is6inch && !isDogBowl && !dedication) {
+            markMissing('#dedication', 'Dedication (for 6-inch cake)');
+        }
+        if (!pickup) {
+            markMissing('#pickupDate', 'Date & Time of Pickup');
+        }
+
+        // ── SAME-DAY & PAST DATE VALIDATION ──
+        if (pickup) {
+            if (isPast(pickup)) {
+                markMissing('#pickupDate', 'Pickup date cannot be in the past');
+                missingFields.push('Pickup date cannot be in the past');
+            } else if (isToday(pickup)) {
+                markMissing('#pickupDate', 'Same-day pickup is not available. Please select tomorrow or later.');
+                missingFields.push('Same-day pickup is not available. Please select tomorrow or later.');
+            } else if (isSaturday(pickup)) {
+                markMissing('#pickupDate', 'Saturday pickup is not available. Please select a different day.');
+                missingFields.push('Saturday pickup is not available. Please select a different day.');
+            }
+        }
+
+        if (missingFields.length) {
+            // Show inline error summary
+            errorSummary.innerHTML =
+                `<strong>⚠️ Please complete the following:</strong><br>• ${missingFields.join('<br>• ')}`;
+            errorSummary.classList.add('visible');
+
+            // Scroll to first error element
+            if (errorElements.length > 0) {
+                errorElements[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                errorElements[0].focus();
+            } else {
+                // Scroll to form top
+                document.getElementById('formCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            return;
+        }
+
+        const orderData = {
+            customerName: name,
+            contact,
+            cakeType: selectedCake,
+            size: selectedSize,
+            cakeColor: selectedCakeColor,
+            fontColor: selectedFontColor,
+            dogName: dogName || null,
+            dedication: dedication || null,
+            pickupDatetime: pickup,
+            notes: notes || null,
+        };
+
+        const btn = document.getElementById('submitBtn');
+        btn.disabled = true;
+        btn.textContent = '🐾 Submitting...';
+
+        try {
+            const res = await fetch(CLOUD_FUNCTION_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(orderData)
+            });
+
+            const data = await res.json();
+
+            if (!res.ok || !data.success) {
+                throw new Error(data.error || 'Failed to submit order. Please try again.');
+            }
+
+            showSuccess(orderData, data.orderId || 'N/A', data.calendarAddUrl || '#');
+        } catch (err) {
+            console.error('Submission error:', err);
+            errorSummary.innerHTML =
+                `<strong>❌ Submission Failed</strong><br>${err.message || 'Please try again or message us on Messenger.'}`;
+            errorSummary.classList.add('visible');
+            errorSummary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } finally {
+            btn.disabled = false;
+            btn.textContent = '🐾 Place My Order';
+        }
+    }
+
+    function showSuccess(order, orderId, calendarAddUrl) {
+        const pickup = new Date(order.pickupDatetime).toLocaleString('en-PH', {
+            dateStyle: 'medium',
+            timeStyle: 'short'
+        });
+        const rows = [
+            ['🧾 Order', orderId],
+            ['🎂 Cake', order.cakeType],
+            ['📏 Size', order.size],
+            ['🎨 Color', order.cakeColor],
+            ['✍️ Font', order.fontColor],
+            order.dogName ? ['🐶 Dog', order.dogName] : null,
+            order.dedication ? ['💌 For', order.dedication] : null,
+            ['📅 Pickup', pickup],
+            ['📍 Where', 'Camella Mandalagan'],
+            order.notes ? ['📝 Notes', order.notes] : null,
+        ].filter(Boolean);
+
+        document.getElementById('modalSummary').innerHTML =
+            rows.map(([l, v]) =>
+                `<div class="row"><span class="lbl">${l}</span><span>${v}</span></div>`
+            ).join('');
+
+        const calLink = document.getElementById('calLink');
+        if (calendarAddUrl && calendarAddUrl !== '#') {
+            calLink.href = calendarAddUrl;
+            calLink.style.display = 'inline-flex';
+        } else {
+            calLink.style.display = 'none';
+        }
+
+        document.getElementById('modal').classList.add('show');
+    }
+
+    // ── Update all Messenger links with configured username ──
+    document.querySelectorAll('a[href*="m.me/arffogato"]').forEach(link => {
+        link.href = `https://m.me/${FB_PAGE_USERNAME}`;
+    });
+</script>
+</body>
+</html>
